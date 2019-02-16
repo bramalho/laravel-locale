@@ -44,8 +44,13 @@ class Kernel extends HttpKernel
 ```
 
 ## Usage
-
-### Something
+```html
+<form method="POST" action="{{ route('locale') }}">
+    @csrf
+    <input type="text" name="locale" value="pt">
+    <button type="submit">Submit</button>
+</form>
+```
 
 ## License
 The **Laravel Locale** is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
