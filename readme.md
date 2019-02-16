@@ -23,6 +23,26 @@ Publish the configs
 php artisan vendor:publish --provider 'BRamalho\LaravelLocale\LaravelLocaleServiceProvider'
 ```
 
+Register the Middleware in `app\Http\Kernel.php`
+```php
+<?php
+
+namespace App\Http;
+
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Bramalho\LaravelLocale\Http\Middleware\Locale;
+
+class Kernel extends HttpKernel
+{
+    // ...
+
+    protected $middleware = [
+        \Illuminate\Session\Middleware\StartSession::class,
+        Locale::class
+    ];
+}
+```
+
 ## Usage
 
 ### Something
